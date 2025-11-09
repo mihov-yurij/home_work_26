@@ -1,0 +1,20 @@
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+.slider-item {
+    padding: 5px;
+    border: 4px solid;
+    cursor: pointer;
+}
+
+.slider-item:cover {
+    border-color: royalblue;
+}
+
+.slider-item.is-completed {
+    background-color: darkseagreen;
+}

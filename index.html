@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myButton">Натисни мене</button>
+    <ul class="slider">
+        <li class="slider-item">Item 1</li>
+        <li class="slider-item">Item 2</li>
+        <li class="slider-item">Item 3</li>
+        
+    <!-- <script type="module" src="./js/index.js"></script> -->
+    <!-- <script src="js/index.js"> </script>
+    <script src="main/main.js"></script> -->
+</body>
+<script type="module">
+    import { trackMousePosition } from '../mouseHandler/main.js';
+    console.log('Main module loaded');
+    trackMousePosition(); 
+</script>
+<script type="module">
+    import { handleButtonClick } from '../handleButton/index.js';
+    console.log('Button handler module loaded');
+    handleButtonClick();
+</script>
+<script type="module">
+    import { setupEventDelegation } from '/js/delegation/index.js';
+    console.log('Item clicked: ${clickedItem.textContent}')
+    setupEventDelegation();
+</script>
+
+
+</html>
