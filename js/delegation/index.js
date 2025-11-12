@@ -1,15 +1,4 @@
 "use strict"
-function setupEventDelegation(testItemElement)  {
-    testItemElement.testList.add('is-completed')
-}
-document.addEventListener('click', (event) => {
- const testItemElement = event.target.closest('.testItem')
- if  (testItemElement) {
-    onTestItemClick(testItemElement)
- }
-})
-setupEventDelegation()
-export{setupEventDelegation}
 function createTestList() {
   document.body.innerHTML = `
     <ul id="testList">
@@ -20,10 +9,15 @@ function createTestList() {
     `
 }
 createTestList()
-const  addTestItem = () => 
 
-addTestItem()
-addTestItem()
-addTestItem()
-addTestItem()
+function setupEventDelegation(selector) {
+  const list = document.querySelector(selector)
+  list.addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+        console.log(`Item clicked: ${event.target.textContent}`)
+    }
+  })
+}
 
+setupEventDelegation('#testList');
+export { setupEventDelegation };

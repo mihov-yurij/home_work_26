@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <button id="myButton">Натисни мене</button>
+    <button id="myButton">down me</button>
     <ul class="slider">
         <li class="slider-item">Item 1</li>
         <li class="slider-item">Item 2</li>
@@ -30,7 +30,7 @@
     handleButtonClick();
 </script>
 <script type="module">
-    import { setupEventDelegation } from '/js/delegation/index.js';
+    import { setupEventDelegation } from '../js/delegation/index.js';
     console.log('Item clicked: ${clickedItem.textContent}')
     setupEventDelegation();
 </script>

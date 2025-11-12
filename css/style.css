@@ -18,3 +18,8 @@
 .slider-item.is-completed {
     background-color: darkseagreen;
 }
+#myButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
