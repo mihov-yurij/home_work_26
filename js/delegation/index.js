@@ -1,19 +1,21 @@
-"use strict"
 function setupEventDelegation(selector) {
- 
+  // дозволяємо передавати або селектор (string), або вже знайдений елемент
   const list = typeof selector === 'string' ? document.querySelector(selector) : selector;
   if (!list) {
-    console.log('List is found for selector:', selector);
+    console.log('List  found for selector:', querySelector);
     return;
   }
+
   list.addEventListener('click', function(event) {
-       const li = event.target.closest('li');
-        if (!li || !list.contains(li)) return;
+    // .closest дозволяє коректно обробляти кліки по внутрішнім елементам <li>
+    const li = event.target.closest('li');
+    // перевіряємо, що знайшли <li> та він всередині списку
+    if (!li || !list.contains(li)) return;
     console.log(`Item clicked: ${li.textContent}`);
   });
 }
 
-
+// приклад повного використання
 function createTestList() {
   document.body.innerHTML = `
     <ul id="testList">
@@ -24,5 +26,5 @@ function createTestList() {
   `;
 }
 createTestList();
-setupEventDelegation('#testList'); 
+setupEventDelegation(selector, {selector:'#testList'}); // <- ось тут потрібно передати селектор
 export { setupEventDelegation };
