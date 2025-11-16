@@ -26,5 +26,5 @@ function createTestList() {
   `;
 }
 createTestList();
-setupEventDelegation(selector, {selector:'#testList'}); // <- ось тут потрібно передати селектор
+setupEventDelegation(selector = '#testList'); // <- ось тут потрібно передати селектор {selector:'#testList'}); // <- ось тут потрібно передати селектор
 export { setupEventDelegation };
